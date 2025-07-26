@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TableColumn?>
@@ -11,14 +12,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vue.CtrlFen">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vue.CtrlFen">
    <children>
-      <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="506.0" prefWidth="629.0" spacing="20.0">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0">
+            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="584.0" spacing="40.0">
                <children>
-                  <TextField fx:id="txtMax" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="130.0" promptText="Max" />
-                  <SplitMenuButton fx:id="menuCapacity" text="Reps capacity">
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label contentDisplay="BOTTOM" minWidth="-Infinity" prefHeight="26.0" prefWidth="30.0" text="Max" />
+                        <TextField fx:id="txtMax" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="10.0" prefWidth="130.0" promptText="100" />
+                     </children>
+                  </HBox>
+                  <SplitMenuButton fx:id="menuCapacity" prefHeight="26.0" prefWidth="124.0" text="Reps capacity">
                      <items>
                         <MenuItem fx:id="itemHigh" text="High" />
                         <MenuItem fx:id="itemAverage" text="Average" />
@@ -26,8 +32,13 @@
                      </items>
 
                   </SplitMenuButton>
-
-                  <TextField fx:id="txtReps" promptText="Reps" />
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="177.0" text="Nombre de reps" />
+      
+                        <TextField fx:id="txtReps" promptText="6" />
+                     </children>
+                  </HBox>
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -37,12 +48,12 @@
                <children>
                   <TableView fx:id="tabAffichage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="394.0" prefWidth="579.0">
                      <columns>
-                        <TableColumn prefWidth="136.79995119571686" text="RPE" fx:id="colRPE"/>
-                        <TableColumn prefWidth="101.60003662109375" text="Charge" fx:id="colCharge"/>
-                        <TableColumn minWidth="0.0" prefWidth="180.80006408691406" text="Pourcentage" fx:id="colPourcentage"/>
+                        <TableColumn fx:id="colRPE" prefWidth="136.79995119571686" text="RPE" />
+                        <TableColumn fx:id="colCharge" prefWidth="101.60003662109375" text="Charge" />
+                        <TableColumn fx:id="colPourcentage" minWidth="0.0" prefWidth="180.80006408691406" text="Pourcentage" />
 
                      </columns>
-                  </TableView>120
+                  </TableView>
                </children>
             </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -52,6 +63,9 @@
                </children>
             </HBox>
          </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </VBox>
    </children>
 </Pane>
